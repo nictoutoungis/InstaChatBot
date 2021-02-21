@@ -21,7 +21,6 @@ Installing Python3.7 using Homebrew:
 ```
 brew install python@3.7
 brew link python@3.7
-
 ```
 
 ```python3 -m install --upgrade pip```
