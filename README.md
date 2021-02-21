@@ -13,6 +13,7 @@ Python 3.7 and Pip 21.0.0+ is required
 Check Python and Pip version with:
 
 ```python3 --version```
+
 ```pip --version```
 
 Installing Python3.7 using Homebrew:
