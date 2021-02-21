@@ -33,9 +33,24 @@ Making files executables:
 
 ```chmod +x trainBot.py instaBot.py```
 
+# Usage
+
+```./instaBot.py username user [-v][-t TIME]```
+
+Username: Your instagram username
+User: User to send messages to
+
+Optional Arguments:
+
+\-t TIME: How much time between messages and refreshes
+\-v: Display logging information
 
 # Running first example
 
 A JSON file is provided with template conversation topic and responses the AI will use to train.
 
-Run the train script
+Run the training script:
+
+```./trainBot.py```
+
+Run 
