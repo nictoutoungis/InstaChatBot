@@ -25,6 +25,17 @@ python3 -m venv venv
 source venv/bin/activate
 ````
 
-Installing modules, run:
+Installing all modules, run:
 
 ```pip install -r requirements.txt```
+
+Making files executables:
+
+```chmod +x trainBot.py instaBot.py```
+
+
+# Running first example
+
+A JSON file is provided with template conversation topic and responses the AI will use to train.
+
+Run the train script
