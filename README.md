@@ -47,6 +47,10 @@ Installing all modules, run:
 
 ```pip install -r requirements.txt```
 
+Go to code folder:
+
+```cd BotCode```
+
 Making files executables:
 
 ```chmod +x trainBot.py instaBot.py```
