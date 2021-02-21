@@ -20,5 +20,7 @@ Go into the project folder:
 
 It is recommended to create and run within a virtual environment
 
-```python3 -m venv venv
-   source venv/bin/activate```
+```sh
+python3 -m venv venv
+source venv/bin/activate
+````
