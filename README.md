@@ -42,9 +42,15 @@ User: User to send messages to
 
 Optional Arguments:
 
--t TIME: How much time between messages and refreshes
+-t TIME: How much time between messages and refreshes (Default 20s)
 
--v: Display logging information
+-v: Display AI logging information
+
+Example:
+
+```./instaBot myUserName targetUsername -t 10 -v```
+
+This will send messages from myUserName to targetUsername every 10 seconds and will display AI logging information on the terminal
 
 # Running first example
 
