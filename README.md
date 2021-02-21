@@ -52,7 +52,12 @@ Example:
 
 This will send messages from myUserName to targetUsername every 10 seconds and will display AI logging information on the terminal
 
-# Running first example
+This information is available on the help page:
+
+```./instaBot -h```
+
+
+# Running InstaBot
 
 A JSON file is provided with template conversation topic and responses the AI will use to train.
 
@@ -60,4 +65,6 @@ Run the training script:
 
 ```./trainBot.py```
 
-Run 
+Run instaBot:
+
+```./instaBot yourusername targetusername```
