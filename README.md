@@ -43,7 +43,7 @@ User: User to send messages to
 Optional Arguments:
 
 \-t TIME: How much time between messages and refreshes
-\-v: Display logging information
+-v: Display logging information
 
 # Running first example
 
