@@ -23,10 +23,6 @@ brew install python@3.7
 brew link python@3.7
 ```
 
-Updating pip
-
-```python3 -m pip install --upgrade pip ```
-
 Clone the repository:
 
 ```git clone https://github.com/nictoutoungis/InstaBot.git```
@@ -41,6 +37,11 @@ It is recommended to create and run within a virtual environment
 python3 -m venv venv
 source venv/bin/activate
 ````
+
+Updating pip
+
+```python3 -m pip install --upgrade pip ```
+
 
 Installing all modules, run:
 
