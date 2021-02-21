@@ -23,7 +23,7 @@ brew install python@3.7
 brew link python@3.7
 ```
 
-```python3 -m install --upgrade pip```
+```python3 -m pip install --upgrade pip ```
 
 Clone the repository:
 
