@@ -86,3 +86,7 @@ Run the training script:
 Run instaBot:
 
 ```./instaBot yourusername targetusername```
+
+Let it run uninterupted, no need to click on anything
+
+Enjoy :)
