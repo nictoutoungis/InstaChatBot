@@ -8,7 +8,7 @@ InstaBot is an AI powered chatbot which responds to Instagram Direct Messages, e
 
 Firefox and [Firefox Web Driver](https://github.com/mozilla/geckodriver/releases) are required to run InstaBot
 
-Python 3.7 and Pip 21.0.0+ is required
+Python 3.7 and above (3.9 not recommended) and Pip 21.0.0+ is required
 
 Check Python and Pip version with:
 
@@ -16,11 +16,11 @@ Check Python and Pip version with:
 
 ```pip --version```
 
-Installing Python3.7 using Homebrew:
+Installing Python3.x using Homebrew:
 
 ```
-brew install python@3.7
-brew link python@3.7
+brew install python@3.x
+brew link python@3.x
 ```
 
 Clone the repository:
