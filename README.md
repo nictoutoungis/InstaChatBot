@@ -113,18 +113,18 @@ Example:
 questions, answers = datasetFrom2Files.datasetFrom2Files("datasets/human_text.txt", "datasets/robot_text.txt")
 ``` 
 
+### Testing chatbots
+
+You can test the chatbots before running them in instagram using:
+```
+./generativeChatBot.py
+./retreivalChatBot.py
+```
+
 ## Running InstaBot
 
-A JSON file is provided with template conversation topic and responses the AI will use to train.
+Whole program in its best version is ready to run as is using provided models, simply run the instaBot.py as shown in the usage section.
 
-Run the training script:
-
-```./trainBot.py```
-
-Run instaBot:
-
-```./instaBot yourusername targetusername```
-
-Let it run uninterupted, no need to click on anything
+Let it run uninterrupted, no need to click on anything
 
 Enjoy :)
