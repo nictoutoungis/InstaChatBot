@@ -1,10 +1,11 @@
+
 # InstaBot
 
 AI generated Instagram Messages
 
 InstaBot is an AI powered chatbot which responds to Instagram Direct Messages, easily trainable to with any dataset.
 
-# Installation
+## Installation
 
 Firefox and [Firefox Web Driver](https://github.com/mozilla/geckodriver/releases) are required to run InstaBot
 
@@ -48,12 +49,13 @@ Installing all modules, run:
 ```pip install -r requirements.txt```
 
 
-# Usage
+## Usage
 
-```./instaBot.py username user [-v][-t TIME]```
+```instaBot.py [-h] [-t TIME] [-v] [-f FIRST_MESSAGE] username user chatbotType```
 
 Username: Your instagram username
 User: User to send messages to
+Chatbot Type: Choose between generative chatbot (gen) or retrieval chatbot (ret)
 
 Optional Arguments:
 
@@ -61,18 +63,21 @@ Optional Arguments:
 
 -v: Display AI logging information
 
+-f: Set the first message to send a user
+
 Example:
 
-```./instaBot myUserName targetUsername -t 10 -v```
+```./instaBot myUserName targetUsername -t 10 -v -f "This is the first message that will be sent"```
 
-This will send messages from myUserName to targetUsername every 10 seconds and will display AI logging information on the terminal
+This will send messages from myUserName to targetUsername every 10 seconds and will display AI logging information on the terminal, starting with the message "This is the first message that will be sent"
 
 This information is available on the help page:
 
 ```./instaBot -h```
 
 
-# Running InstaBot
+
+## Running InstaBot
 
 A JSON file is provided with template conversation topic and responses the AI will use to train.
 
