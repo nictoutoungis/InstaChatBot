@@ -1,2 +1,5 @@
 *.pkl
 *.h5
+*.log
+.venv/
+.__pycache__/

@@ -29,17 +29,20 @@ description = """\033[1;32;40m
 
 argParser = argparse.ArgumentParser(description=description, formatter_class=RawTextHelpFormatter)
 
-argParser.add_argument("username", help="Your instagram username")
-argParser.add_argument("user",     help="User to send first message to")
+argParser.add_argument("username",    help="Your instagram username")
+argParser.add_argument("user",        help="User to send first message to")
+argParser.add_argument("chatbotType", help="Choose between generative (gen) or retrieval (ret)")
 
-argParser.add_argument("-t","--time", help="Amount of time between bot refresh and responses (in seconds) (default = 20s)", type=int)
-argParser.add_argument("-v", "--verbose", help="Display information in the terminal", action="store_true")
+argParser.add_argument("-t","--time",           help="Amount of time between bot refresh and responses (in seconds) (default = 20s)", type=int)
+argParser.add_argument("-v", "--verbose",       help="Display information in the terminal", action="store_true")
+argParser.add_argument("-f", "--first_message", help="Set a first message to send (default = 'Hello I am an AI that can respond to your messages')")
 
 args = argParser.parse_args()
 
 password = getpass.getpass()
 
-import botPrediction
+import retreivalChatBot
+import generativeChatBot
 
 browser = webdriver.Firefox()
 
@@ -58,15 +61,19 @@ def main():
 	loadInstagramMessages()
 	
 	conversationPage, messagePage = goToConversation(user)
-
 	htmlSource = browser.page_source
 	request, spanTags = getLastMessage(htmlSource)
-	
 	user = getUsernameOfLastMessage(spanTags)
-
 	request = ""
 
-	conversationPage.sendMessageTo(user, "Hello I am an AI")
+	if args.first_message == None:
+		
+		conversationPage.sendMessageTo(user, "Hello I am an AI that can respond to your messages")
+
+	else:
+
+		conversationPage.sendMessageTo(user, args.first_message)
+
 
 	while True:
 
@@ -79,8 +86,19 @@ def main():
 			sleep(time)
 			htmlSource = browser.page_source
 			request, spanTags = getLastMessage(htmlSource)
-			response = botPrediction.chatbot_response(request)
-			conversationPage.sendMessageTo(user, response)
+			
+			if args.chatbotType == "gen":
+				response     = generativeChatBot.generateBotResponse(request)
+				conversationPage.sendMessageTo(user, response.replace(" end", "."))
+
+			elif args.chatbotType == "ret":
+				response = retreivalChatBot.chatbot_response(request)
+				conversationPage.sendMessageTo(user, response)
+
+			else:
+
+				print("Chatbot Type not reconize, please use gen for generative and ret for retrieval")
+			
 			user = getUsernameOfLastMessage(spanTags)
 
 			if args.verbose == True:
@@ -88,9 +106,7 @@ def main():
 				print("Responding to: " + request)
 				print("Sending message to: " + user)
 			
-			# messagePage.openConversationWith(user)
 			browser.implicitly_wait(5)
-
 
 	sleep(5)
 
