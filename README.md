@@ -1,4 +1,5 @@
 
+
 # InstaBot
 
 AI generated Instagram Messages
@@ -75,7 +76,42 @@ This information is available on the help page:
 
 ```./instaBot -h```
 
+## Training the chatbots
 
+### Training retrieval chatbot
+
+A basic conversation file is provided (conversations.JSON), this file is used to train the retrieval bot. 
+
+A model is already created with that JSON file.
+
+Run the trainRetrievalBot.py script
+
+`./trainRetrievalBot.py`
+
+### Training generative chatbot
+
+Different datasets are provided in the datasets directory, there are also scripts to clean up the data from different type of sets:
+
+``` 
+datasetFrom2Files.py
+datasetFromTabFile.py
+datasetFromYAMLFiles.py
+datasetFromSeparatorFile.py
+``` 
+
+It is recommended to run the ``` shortenMovieCorpus.py``` script before training using the movie_lines.txt file.
+
+Run the trainGenerativeBot.py script
+
+`./trainGenerativeBot.py`
+
+Modify the line that loads the dataset in the trainGenerativeBot script and the tokenizeData script
+
+Example:
+
+```
+questions, answers = datasetFrom2Files.datasetFrom2Files("datasets/human_text.txt", "datasets/robot_text.txt")
+``` 
 
 ## Running InstaBot
 
